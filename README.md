@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Portfolio and Blog Website - Frontend
+## 🌍 Live Link  
+🔗 [Website](https://personal-portfolio-blog-nu.vercel.app) 
 
-First, run the development server:
+## Description
+
+This is a personal portfolio and blog website built with Next.js and TypeScript. It features project showcases, blog management, authentication, and a user-friendly dashboard.
+
+## Features of This Project
+- **Home Page:** Portfolio introduction, skills, projects, and resume download.
+- **Projects:** List with detailed project pages.
+- **Blog:** Fetches and displays blog posts dynamically.
+- **Contact:** Form to submit messages.
+- **Dashboard:** Authentication, blog, project, and message management.
+- **Dark Mode:** User preference toggle.
+- **SEO Optimization:** SSR & SSG implemented for better performance.
+
+## Tech Stack
+- **Next.js (React Framework)** for building the frontend.
+- **TypeScript** for strong typing and better developer experience.
+- **Tailwind CSS & DaisyUI** for styling.
+- **MongoDB** for data storage and management.
+- **NextAuth** for authentication.
+- **Framer Motion** for animations.
+
+
+## Prerequisites
+Ensure you have the following installed:
+- **npm** or **yarn**
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Create a `.env` file** in the root directory and configure your environment variables:
+   ```bash
+       GITHUB_ID=<GITHUB AUTH ID>
+       GITHUB_SECRET=<GITHUB AUTH SECRET>
+       GOOGLE_ID=<GITHUB GOOGLE ID>
+       GOOGLE_SECRET=<GITHUB GOOGLE SECRET>
+       NEXTAUTH_SECRET=<NEXT AUTH SECRET>
+       NEXTAUTH_URL=https:<FRONTEND LINK>
+       BACKEND_URL=https:<BACKEND LINK>
+   ```
+
+## Scripts
+
+- **Start Development Server:**
+
+  ```bash
+  npm run dev
+  ```
+
+- **Build for Production:**
+
+  ```bash
+  npm run build
+  ```
+
+- **Start Production Server:**
+
+  ```bash
+  npm run start
+  ```
+
+## Folder Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+PERSONAL-PORTFOLIO/
+│── .next/
+│── .vercel/
+│── node_modules/
+│── public/
+│── src/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── blogs/
+│   │   ├── contact/
+│   │   ├── dashboard/
+│   │   ├── login/
+│   │   ├── projects/
+│   │   ├── register/
+│   │   ├── error.tsx
+│   │   ├── favicon.png
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── loading.tsx
+│   │   ├── not-found.tsx
+│   │   ├── page.tsx
+│   ├── assets/
+│   ├── components/
+│   ├── lib/
+│   │   ├── utils.ts
+│   ├── utils/
+│── .env
+│── .gitignore
+│── eslint.config.mjs
+│── next-env.d.ts
+│── next.config.ts
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
