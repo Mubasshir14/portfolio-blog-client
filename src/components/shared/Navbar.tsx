@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Sun, Moon, Home, Briefcase, PenTool, MessageSquare, LogOut, LayoutDashboard, Menu, X } from "lucide-react";
 import Image from "next/image";
-import image from '../../assets/logo-removebg-preview.png'
+import image from '../../assets/logo4-removebg-preview1.png'
 
 const Navbar = ({ session }: { session: any }) => {
   const [theme, setTheme] = useState<string | null>(null);
@@ -47,8 +47,8 @@ const Navbar = ({ session }: { session: any }) => {
   };
 
   return (
-    <nav className={` transition-all duration-300 ${
-      isScrolled ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+    <nav className={`relative z-50 transition-all duration-300 ${
+      isScrolled ? "bg-base-100/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg" : "bg-transparent"
     }`}>
       <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4">
         <Link 
@@ -59,8 +59,7 @@ const Navbar = ({ session }: { session: any }) => {
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300" />
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center space-x-1">
+        <div className="hidden lg:flex items-center text-primary space-x-1">
           {navItems.map(({ href, label, icon: Icon }) => {
             const isActive = pathname === href;
             return (
@@ -86,7 +85,6 @@ const Navbar = ({ session }: { session: any }) => {
           })}
         </div>
 
-        {/* Right side buttons */}
         <div className="flex items-center gap-4">
           <button
             onClick={toggleTheme}
@@ -94,9 +92,9 @@ const Navbar = ({ session }: { session: any }) => {
             aria-label="Toggle theme"
           >
             {theme === "light" ? (
-              <Moon className="w-5 h-5 text-gray-600" />
+              <Moon className="w-5 h-5 text-primary" />
             ) : (
-              <Sun className="w-5 h-5 text-gray-300" />
+              <Sun className="w-5 h-5 text-primary" />
             )}
           </button>
 
@@ -117,25 +115,24 @@ const Navbar = ({ session }: { session: any }) => {
             </Link>
           )}
 
-          {/* Hamburger Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+            className="lg:hidden p-2 rounded-l transition-colors duration-300"
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 bg-gradient-to-r from-primary to-secondary text-white text-xl rounded-md" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6 bg-gradient-to-r from-primary to-secondary text-white text-xl rounded-md" />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+     
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg py-4 px-4">
-          <div className="flex flex-col space-y-2">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-base-100 dark:bg-gray-900 shadow-lg z-50">
+          <div className="flex flex-col space-y-2 p-4">
             {navItems.map(({ href, label, icon: Icon }) => {
               const isActive = pathname === href;
               return (
@@ -154,7 +151,7 @@ const Navbar = ({ session }: { session: any }) => {
                 </Link>
               );
             })}
-            {/* Mobile Menu Login/Logout Button */}
+            
             {session?.user ? (
               <button
                 onClick={() => {

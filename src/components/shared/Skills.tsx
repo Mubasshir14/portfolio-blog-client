@@ -51,6 +51,9 @@ const Skills = () => {
         {skillsData.map((skill, index) => (
           <motion.div
             key={index}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
             className="p-8 bg-opacity-90 ring ring-primary/50 ring-offset-4  rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:bg-gradient-to-b from-primary/10 to-transparent"
             whileHover={{ scale: 1.1 }}
           >

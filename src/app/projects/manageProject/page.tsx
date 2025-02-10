@@ -72,7 +72,9 @@ const ManageProject = () => {
 
   return (
     <div className="p-8 bg-base-100 bg-gradient-to-b from-primary/10 to-transparent">
-      <h2 className="text-3xl font-bold text-center text-primary mb-6">Manage Projects</h2>
+      <h2 className="text-3xl font-bold text-center text-primary mb-6">
+        Manage Projects
+      </h2>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse border border-gray-300">
           <thead>

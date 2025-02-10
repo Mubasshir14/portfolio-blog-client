@@ -1,13 +1,15 @@
-
 # Portfolio and Blog Website - Frontend
-## 🌍 Live Link  
-🔗 [Website](https://personal-portfolio-blog-nu.vercel.app) 
+
+## 🌍 Live Link
+
+🔗 [Website](https://personal-portfolio-blog-nu.vercel.app)
 
 ## Description
 
 This is a personal portfolio and blog website built with Next.js and TypeScript. It features project showcases, blog management, authentication, and a user-friendly dashboard.
 
 ## Features of This Project
+
 - **Home Page:** Portfolio introduction, skills, projects, and resume download.
 - **Projects:** List with detailed project pages.
 - **Blog:** Fetches and displays blog posts dynamically.
@@ -17,6 +19,7 @@ This is a personal portfolio and blog website built with Next.js and TypeScript.
 - **SEO Optimization:** SSR & SSG implemented for better performance.
 
 ## Tech Stack
+
 - **Next.js (React Framework)** for building the frontend.
 - **TypeScript** for strong typing and better developer experience.
 - **Tailwind CSS & DaisyUI** for styling.
@@ -24,10 +27,12 @@ This is a personal portfolio and blog website built with Next.js and TypeScript.
 - **NextAuth** for authentication.
 - **Framer Motion** for animations.
 
-
 ## Prerequisites
+
 Ensure you have the following installed:
+
 - **npm** or **yarn**
+
 ## Installation
 
 1. **Clone the repository:**
@@ -109,4 +114,7 @@ PERSONAL-PORTFOLIO/
 │── next-env.d.ts
 │── next.config.ts
 ```
+
+```
+
 ```

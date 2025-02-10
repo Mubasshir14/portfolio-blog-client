@@ -4,6 +4,9 @@ import Image from "next/image";
 import { formatDistanceToNow } from "date-fns";
 import { Metadata, ResolvingMetadata } from "next/types";
 import { Clock, Share2, BookmarkPlus, ThumbsUp } from "lucide-react";
+import { headers } from "next/headers";
+import { toast } from "sonner";
+import CopyButton from "@/components/shared/CopyButton";
 
 interface BlogType {
   _id: string;
@@ -43,6 +46,9 @@ export async function generateMetadata(
 }
 
 const BlogDetails = async ({ params }: any) => {
+  const headersData = await headers();
+  const baseUrl = headersData.get("host");
+  const currentUrl = baseUrl ? `https://${baseUrl}/` : "";
   const { id } = await params;
   const res = await fetch(
     `https://portfolio-blog-server.vercel.app/api/blogs/${id}`,
@@ -77,8 +83,8 @@ const BlogDetails = async ({ params }: any) => {
           <button className="p-3 rounded-full bg-white/90 shadow-lg hover:shadow-xl dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-300 hover:scale-110 group">
             <BookmarkPlus className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-primary" />
           </button>
-          <button className="p-3 rounded-full bg-white/90 shadow-lg hover:shadow-xl dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-300 hover:scale-110 group">
-            <Share2 className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-primary" />
+          <button>
+            <CopyButton url={currentUrl} />
           </button>
         </div>
 
@@ -138,7 +144,7 @@ const BlogDetails = async ({ params }: any) => {
                       your inbox.
                     </p>
                   </div>
-                  <div className="flex gap-4">
+                  <div className="lg:flex-row flex-col space-y-3 gap-4">
                     <input
                       type="email"
                       placeholder="Enter your email"

@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
 import image from "../../assets/mub.png";
 import Link from "next/link";
-
+import { GoDownload } from "react-icons/go";
 const HeroSection = () => {
   const [greeting, setGreeting] = useState("");
 
@@ -40,6 +40,8 @@ const HeroSection = () => {
                 sequence={[
                   "Web Developer",
                   1000,
+                  "MERN Stack Developer",
+                  1000,
                   "Frontend Developer",
                   1000,
                   "UI/UX Designer",
@@ -66,9 +68,9 @@ const HeroSection = () => {
             <a
               href="https://drive.google.com/uc?export=download&id=18IiIDRN9jU7JW1BvWYG4xrI1dng3L7B0"
               download="Mubasshir_CV.pdf"
-              className="btn btn-primary shadow-lg hover:shadow-primary/40 transition-all duration-300"
+              className="btn  bg-gradient-to-r from-primary to-secondary text-lg text-white"
             >
-              Download Resume
+              Resume <GoDownload className="font-bold text-white text-lg" />
             </a>
 
             <Link

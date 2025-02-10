@@ -73,7 +73,9 @@ const ManageBlog = () => {
 
   return (
     <div className="p-8 bg-base-100 bg-gradient-to-b from-primary/10 to-transparent">
-      <h2 className="text-3xl font-bold text-center text-primary mb-6">Manage Blogs</h2>
+      <h2 className="text-3xl font-bold text-center text-primary mb-6">
+        Manage Blogs
+      </h2>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse border border-gray-300">
           <thead>
@@ -95,16 +97,18 @@ const ManageBlog = () => {
                     className="h-16 w-28 object-cover rounded-md mx-auto"
                   />
                 </td>
-                <td className="p-4 border">{blog.name}</td>
-                <td className="p-4 border space-x-2">
+                <td className="p-4 border">
+                  <span className="text-primary">{blog.name}</span>
+                </td>
+                <td className="p-4  flex flex-col space-y-2">
                   <Link
-                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    className="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded hover:bg-blue-600"
                     href={`/blogs/manageBlog/update/${blog._id}`}
                   >
                     Update
                   </Link>
                   <button
-                    className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                    className="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded "
                     onClick={() => handleDelete(blog._id)}
                   >
                     Delete

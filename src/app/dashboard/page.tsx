@@ -14,12 +14,12 @@ const DashboardPage = async () => {
     <div className="min-h-screen bg-gradient-to-b  py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <div className=" dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
-          {/* Header Banner */}
+        
           <div className="h-32 bg-gradient-to-r from-primary to-secondary" />
 
-          {/* Profile Section */}
+        
           <div className="relative px-4 sm:px-6 lg:px-8 pb-8">
-            {/* Profile Image */}
+      
             <div className="relative -mt-16 flex justify-center">
               {session.user?.image && (
                 <Image
@@ -32,7 +32,7 @@ const DashboardPage = async () => {
               )}
             </div>
 
-            {/* User Info */}
+           
             <div className="mt-6 text-center">
               <h1 className="text-3xl font-bold text-secondary dark:text-white">
                 {session.user?.name}
@@ -42,7 +42,7 @@ const DashboardPage = async () => {
               </p>
             </div>
 
-            {/* Stats Section */}
+          
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className=" dark:bg-gray-700 rounded-xl p-6 text-center">
                 <h3 className="text-lg font-semibold text-secondary dark:text-gray-300">

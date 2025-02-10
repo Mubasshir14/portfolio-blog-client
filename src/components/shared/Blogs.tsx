@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface BlogType {
   _id: string;
@@ -13,23 +14,13 @@ interface BlogType {
 }
 
 const Blogs = () => {
-  const [blogs, setBlogs] = useState<BlogType[]>([]);
+  const [data, setData] = useState<BlogType[]>([]);
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const res = await fetch("https://portfolio-blog-server.vercel.app/api/blogs", {
-            cache: "force-cache"
-          }
-        );
-        const data: BlogType[] = await res.json();
-        setBlogs(data);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-      }
-    };
-
-    fetchBlogs();
+    fetch("https://portfolio-blog-server.vercel.app/api/blogs")
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error("Error fetching blogs:", error));
   }, []);
 
   return (
@@ -44,10 +35,13 @@ const Blogs = () => {
       </div>
 
       <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-        {blogs.slice(0, 3).map((blog) => (
-          <div
+        {data.slice(0, 3).map((blog, index) => (
+          <motion.div
             key={blog._id}
-            className="shadow-lg rounded-lg overflow-hidden hover:shadow-xl hover:bg-gradient-to-b from-primary/10 to-transparent bg-opacity-90 ring ring-primary/50 ring-offset-2 hover:scale-105 transition-transform duration-300"
+            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className="shadow-lg rounded-lg overflow-hidden hover:shadow-xl bg-opacity-90 ring ring-primary/50 ring-offset-2 transition-transform duration-300"
           >
             <Image
               src={blog.image}
@@ -57,22 +51,23 @@ const Blogs = () => {
               className="w-full h-48 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-xl font-semibold text-primary">
+              <h3 className="text-xl font-semibold text-blue-600">
                 {blog.name}
               </h3>
-              <p className="text-sm text-secondary mt-2">
-                {blog.description.slice(0, 30)}...
+              <p className="text-sm text-secondary dark:text-gray-300 mt-2">
+                {blog.description.slice(0, 60)}...
               </p>
               <div className="flex justify-between mt-4">
                 <Link
                   href={`/blogs/${blog._id}`}
-                  className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-300% animate-gradient hover:btn-primary px-4 py-2 border-2 rounded-lg flex items-center"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent px-4 py-2 border-2 border-secondary rounded-lg transition-all duration-300 hover:ring-2 hover:ring-secondary"
                 >
                   Read More
                 </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className="text-center mt-6">

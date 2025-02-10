@@ -31,10 +31,15 @@ const Page = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Messages</h2>
+      <h2 className="text-3xl font-bold text-center text-primary mb-6">
+        Messages
+      </h2>
       <ul>
         {messages.map((message, index) => (
-          <li key={index} className="border p-4 mb-2 rounded-md shadow">
+          <li
+            key={index}
+            className="border p-4 mb-2 rounded-md shadow text-primary"
+          >
             <p>
               <strong>Name:</strong> {message.name}
             </p>
