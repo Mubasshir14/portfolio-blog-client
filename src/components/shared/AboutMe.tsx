@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import image from '../../assets/image.jpg'
 
-// AboutMe Component
+
 const AboutMe = () => {
   return (
     <div id="about" className="h-[400px] overflow-hidden mt-2 ">

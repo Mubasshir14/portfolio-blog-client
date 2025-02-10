@@ -7,6 +7,7 @@ import { Clock, Share2, BookmarkPlus, ThumbsUp } from "lucide-react";
 import { headers } from "next/headers";
 import { toast } from "sonner";
 import CopyButton from "@/components/shared/CopyButton";
+import ShareButton from "@/components/shared/ShareButton";
 
 interface BlogType {
   _id: string;
@@ -47,8 +48,6 @@ export async function generateMetadata(
 
 const BlogDetails = async ({ params }: any) => {
   const headersData = await headers();
-  const baseUrl = headersData.get("host");
-  const currentUrl = baseUrl ? `https://${baseUrl}/` : "";
   const { id } = await params;
   const res = await fetch(
     `https://portfolio-blog-server.vercel.app/api/blogs/${id}`,
@@ -67,7 +66,10 @@ const BlogDetails = async ({ params }: any) => {
       </div>
     );
   }
-
+  const baseUrl = headersData.get("host");
+  const currentUrl = baseUrl
+    ? `https://personal-portfolio-blog-nu.vercel.app//blogs/${id}`
+    : "";
   const timeAgo = formatDistanceToNow(new Date(data.date), { addSuffix: true });
 
   return (
@@ -75,7 +77,6 @@ const BlogDetails = async ({ params }: any) => {
       <div className="absolute inset-0 bg-grid-primary/[0.02] -z-10" />
 
       <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        {/* Floating Action Bar */}
         <div className="fixed left-8 top-1/2 transform -translate-y-1/2 hidden lg:flex flex-col gap-6">
           <button className="p-3 rounded-full bg-white/90 shadow-lg hover:shadow-xl dark:bg-gray-800/90 backdrop-blur-sm transition-all duration-300 hover:scale-110 group">
             <ThumbsUp className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-primary" />
@@ -86,15 +87,17 @@ const BlogDetails = async ({ params }: any) => {
           <button>
             <CopyButton url={currentUrl} />
           </button>
+          <button>
+            <ShareButton url={currentUrl} />
+          </button>
         </div>
 
-        {/* Blog Header */}
         <header className="text-center mb-20 max-w-4xl mx-auto">
           <div className="mb-8 space-y-4">
             <span className="inline-flex items-center px-6 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary ring-1 ring-primary/20 backdrop-blur-sm">
               {data.topic}
             </span>
-            <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400">
+            <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400 capitalize">
               <Clock className="w-4 h-4" />
               <span>{timeAgo}</span>
             </div>
@@ -104,7 +107,6 @@ const BlogDetails = async ({ params }: any) => {
           </h1>
         </header>
 
-        {/* Featured Image */}
         <div className="relative mb-20">
           <div className="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-primary rounded-3xl blur-2xl opacity-20 animate-pulse" />
           <div className="relative rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video shadow-2xl ring-1 ring-gray-900/5">
@@ -119,7 +121,6 @@ const BlogDetails = async ({ params }: any) => {
           </div>
         </div>
 
-        {/* Blog Content */}
         <div className="prose prose-lg dark:prose-invert max-w-4xl mx-auto">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-2xl opacity-10" />
@@ -130,7 +131,6 @@ const BlogDetails = async ({ params }: any) => {
             </div>
           </div>
 
-          {/* Newsletter Section */}
           <div className="mt-20">
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary to-secondary p-px">
               <div className="relative bg-white dark:bg-gray-900 rounded-3xl p-8 lg:p-12">

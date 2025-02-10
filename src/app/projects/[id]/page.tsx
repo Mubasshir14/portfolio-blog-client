@@ -62,7 +62,6 @@ const ProjectDetails = async ({ params }: any) => {
   return (
     <div className="min-h-screen bg-gradient-to-b ">
       <div className="max-w-screen-xl mx-auto py-16 px-6 sm:px-10">
-        {/* Project Header */}
         <div className="text-center mb-16 space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary">
@@ -74,9 +73,7 @@ const ProjectDetails = async ({ params }: any) => {
           </p>
         </div>
 
-        {/* Project Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Mockup Image */}
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-300" />
             <div className="relative bg-white dark:bg-gray-800 ring-1 ring-gray-900/5 rounded-2xl leading-none flex items-center">
@@ -91,7 +88,6 @@ const ProjectDetails = async ({ params }: any) => {
             </div>
           </div>
 
-          {/* Project Details */}
           <div className="space-y-10">
             <div className="bg-white/70 dark:bg-gray-800 rounded-2xl shadow-xl p-8 transform hover:scale-[1.02] transition-transform duration-500">
               <h3 className="text-2xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
@@ -110,7 +106,6 @@ const ProjectDetails = async ({ params }: any) => {
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href={data.live}

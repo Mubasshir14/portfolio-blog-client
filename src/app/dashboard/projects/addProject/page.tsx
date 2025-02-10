@@ -71,7 +71,6 @@ const AddProject = () => {
       <div className="w-full max-w-4xl p-8">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
-            {/* Project Name */}
             <div>
               <label htmlFor="name" className="block text-primary text-sm mb-2">
                 Project Name
@@ -85,7 +84,6 @@ const AddProject = () => {
               />
             </div>
 
-            {/* Mockup Image */}
             <div>
               <label
                 htmlFor="mockup"
@@ -104,7 +102,6 @@ const AddProject = () => {
               />
             </div>
 
-            {/* Github Link */}
             <div>
               <label
                 htmlFor="github"
@@ -121,7 +118,6 @@ const AddProject = () => {
               />
             </div>
 
-            {/* Live Link */}
             <div>
               <label htmlFor="live" className="block text-primary text-sm mb-2">
                 Live Link
@@ -135,7 +131,6 @@ const AddProject = () => {
               />
             </div>
 
-            {/* Project Description */}
             <div className="sm:col-span-2">
               <label
                 htmlFor="description"
@@ -154,7 +149,6 @@ const AddProject = () => {
               />
             </div>
 
-            {/* Technologies Used */}
             <div className="sm:col-span-2">
               <label
                 htmlFor="technologies"
@@ -198,7 +192,6 @@ const AddProject = () => {
               </div>
             </div>
 
-            {/* Submit Button */}
             <div className="sm:col-span-2">
               <button
                 type="submit"

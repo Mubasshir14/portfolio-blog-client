@@ -58,7 +58,6 @@ const AddBlog = () => {
       <div className="w-full max-w-4xl p-8">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
-            {/* Blog Name */}
             <div>
               <label htmlFor="name" className="block text-primary text-sm mb-2">
                 Blog Name
@@ -72,7 +71,6 @@ const AddBlog = () => {
               />
             </div>
 
-            {/* Image URL */}
             <div>
               <label
                 htmlFor="image"
@@ -89,7 +87,6 @@ const AddBlog = () => {
               />
             </div>
 
-            {/* Blog Description */}
             <div className="sm:col-span-2">
               <label
                 htmlFor="description"
@@ -108,7 +105,6 @@ const AddBlog = () => {
               />
             </div>
 
-            {/* Topic Name */}
             <div>
               <label
                 htmlFor="topic"
@@ -125,7 +121,6 @@ const AddBlog = () => {
               />
             </div>
 
-            {/* Blog Date */}
             <div>
               <label htmlFor="date" className="block text-primary text-sm mb-2">
                 Select Date

@@ -109,7 +109,6 @@ const UpdateProject = ({ params }: any) => {
       <div className="w-full max-w-4xl p-8">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
-            {/* Project Name */}
             <div>
               <label htmlFor="name" className="block text-primary text-sm mb-2">
                 Project Name
@@ -125,7 +124,6 @@ const UpdateProject = ({ params }: any) => {
               )}
             </div>
 
-            {/* Mockup Image */}
             <div>
               <label
                 htmlFor="mockup"
@@ -146,7 +144,6 @@ const UpdateProject = ({ params }: any) => {
               )}
             </div>
 
-            {/* Github Link */}
             <div>
               <label
                 htmlFor="github"
@@ -165,7 +162,6 @@ const UpdateProject = ({ params }: any) => {
               )}
             </div>
 
-            {/* Live Link */}
             <div>
               <label htmlFor="live" className="block text-primary text-sm mb-2">
                 Live Link
@@ -181,7 +177,6 @@ const UpdateProject = ({ params }: any) => {
               )}
             </div>
 
-            {/* Project Description */}
             <div className="sm:col-span-2">
               <label
                 htmlFor="description"
@@ -204,7 +199,6 @@ const UpdateProject = ({ params }: any) => {
               )}
             </div>
 
-            {/* Technologies Used */}
             <div className="sm:col-span-2">
               <label className="block text-primary text-sm mb-2">
                 Technologies Used
@@ -237,7 +231,6 @@ const UpdateProject = ({ params }: any) => {
               </div>
             </div>
 
-            {/* Submit Button */}
             <div className="sm:col-span-2">
               <button
                 type="submit"

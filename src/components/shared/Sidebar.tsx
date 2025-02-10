@@ -10,7 +10,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { usePathname } from "next/navigation"; // To detect active route
+import { usePathname } from "next/navigation";
 
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +73,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
         </nav>
       </div>
 
-      {/* Content area */}
+
       <div className="w-full lg:w-[80%] p-4 overflow-auto">
         <button
           className="lg:hidden p-2 fixed top-13 left-4 bg-primary text-white rounded-full shadow-md"

@@ -24,7 +24,6 @@ const HeroSection = () => {
   return (
     <div className="">
       <div className="max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-4 py-10 md:py-16 gap-8 md:gap-12">
-        {/* Content Section */}
         <div className="flex-1 space-y-6 text-center md:text-left animate-slideUp">
           <div className="space-y-2">
             <div className="text-xl text-primary/80 font-medium animate-fadeIn">
